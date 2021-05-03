@@ -54,6 +54,10 @@ describe 'Members', type: :request do
 
       it 'returns the correct status code' do
         subject
+        expect(body['id']).to eq 1
+        expect(body['first_name']).to eq 'First1'
+        expect(body['last_name']).to eq 'Last1'
+        expect(body['url']).to eq 'http://www.firstlast1.com'
         expect(response).to have_http_status(:success)
       end
     end
