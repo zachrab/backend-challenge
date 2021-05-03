@@ -1,0 +1,12 @@
+# fixtures/members.yml
+member1:
+  id: 1
+  first_name: 'First1'
+  last_name: 'Last1'
+  url: 'http://www.firstlast1.com'
+
+member2:
+  id: 2
+  first_name: 'First2'
+  last_name: 'Last2'
+  url: 'http://www.firstlast2.com'

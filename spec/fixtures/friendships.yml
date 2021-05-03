@@ -1,0 +1,4 @@
+# fixtures/friendships.yml
+friendship1_2:
+  member_id: 1
+  friend_id: 2

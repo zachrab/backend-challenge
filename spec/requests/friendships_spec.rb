@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'Friendships', type: :request do
+  fixtures :members
   let(:body) { JSON.parse(response.body) }
   let(:headers) { { "Accept" => "application/json", 'Content-Type' => 'application/json' } }
 
@@ -20,6 +21,22 @@ describe 'Friendships', type: :request do
       it 'returns the correct status code' do
         subject
         expect(response).to have_http_status(:success)
+      end
+    end
+
+    context 'with invalid params' do
+      let(:params) do
+        {
+          friendship: {
+            member_id: 1,
+            friend_id: 'invalid',
+          }
+        }
+      end
+
+      it 'returns the correct status code' do
+        subject
+        expect(response).not_to have_http_status(:success)
       end
     end
 
