@@ -4,9 +4,11 @@ member1:
   first_name: 'First1'
   last_name: 'Last1'
   url: 'http://www.firstlast1.com'
+  short_url: 'http://ABCDE'
 
 member2:
   id: 2
   first_name: 'First2'
   last_name: 'Last2'
   url: 'http://www.firstlast2.com'
+  short_url: 'http://BCDEF'

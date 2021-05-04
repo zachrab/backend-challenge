@@ -58,6 +58,7 @@ describe 'Members', type: :request do
         expect(body['first_name']).to eq 'First1'
         expect(body['last_name']).to eq 'Last1'
         expect(body['url']).to eq 'http://www.firstlast1.com'
+        expect(body['short_url']).to eq 'http://ABCDE'
         expect(response).to have_http_status(:success)
       end
     end

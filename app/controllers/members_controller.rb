@@ -4,7 +4,8 @@ class MembersController < ApplicationController
 	end
 
 	def create
-		@member = Member.new(first_name: params[:member][:first_name], last_name: params[:member][:last_name], url: params[:member][:url])
+		@member = Member.new(first_name: params[:member][:first_name], last_name: params[:member][:last_name], url: params[:member][:url], short_url: "http://#{Member.generate_short_url}")
+		@member.header = MetaInspector.new(params[:member][:url]).h1 if params[:member][:url]
 		if @member.save
 			render json: @member, status: 200
 		else
